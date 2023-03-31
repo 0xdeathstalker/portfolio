@@ -9,6 +9,7 @@ const About = () => {
                 <Text color="neutral.300">Building interfaces in both web2 and web3 space. Will graduate in June 2023.</Text>
                 <NowPlaying />
             </Flex>
+            
         </Flex>
     )
 }

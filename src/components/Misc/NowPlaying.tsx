@@ -10,10 +10,6 @@ const NowPlaying = () => {
         refetchOnWindowFocus: true
     })
 
-    if(data) {
-        console.log(data)
-    }
-
   return (
     <Flex mt="2" gap="2" alignItems="center">
         {data?.isPlaying? (

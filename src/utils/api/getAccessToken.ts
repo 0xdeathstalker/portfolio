@@ -1,4 +1,3 @@
-import axios from "axios"
 import queryString from "query-string"
 
 const client_id = process.env.SPOTIFY_CLIENT_ID

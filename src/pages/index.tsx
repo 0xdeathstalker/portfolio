@@ -6,6 +6,7 @@ import Work from '../components/Sections/Work'
 import Links from '../components/Sections/Links'
 import { DEFAULT_FONT_SIZES, DEFAULT_X_PADDING } from '../lib/constants/ui'
 import Footer from '../components/Sections/Footer'
+import Navbar from '../components/Misc/Navbar'
 
 export default function Home() {
   return (
@@ -18,23 +19,30 @@ export default function Home() {
         md: "20",
         lg: "36"
       }}
-      display="flex" 
+      display="flex"
+      // flexDirection={{base: "column", md: "row"}}
       alignItems="center" 
       justifyContent="center" 
       color="white"
       fontSize={DEFAULT_FONT_SIZES}
       overflowX="hidden"
     >
-      <Flex 
-        direction="column" 
-        gap="12"
+      <Flex
         px={DEFAULT_X_PADDING}
+        gap={{base: "8", md:"16"}}
+        direction={{base: "column", md: "row"}}
       >
-        <Hero />
-        <About />
-        <Work />
-        <Links />
-        <Footer />
+        <Navbar />
+        <Flex 
+          direction="column"
+          gap="12"
+        >
+          <Hero />
+          <About />
+          {/* <Work />
+          <Links />
+          <Footer /> */}
+        </Flex>
       </Flex>
     </Box>
   )
