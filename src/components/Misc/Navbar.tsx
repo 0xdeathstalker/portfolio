@@ -1,4 +1,5 @@
 import { Flex, Text } from '@chakra-ui/react'
+import Link from 'next/link'
 import React from 'react'
 
 const Navbar = () => {
@@ -6,13 +7,33 @@ const Navbar = () => {
     <Flex
         direction={{base: "row", md: "column"}}
         alignItems={{base: "center", md: "start"}}
+        // justifyContent={{md: "center"}}
         gap="4"
-        fontSize={{base: "xs", md: "md"}}
+        fontSize={{ md: "md" }}
+        mt={{md: "7"}}
     >
         {/* <Text fontSize="42">S</Text> */}
-        <Text>Home</Text>
-        <Text>Builds</Text>
-        <Text>Guestbook</Text>
+        <Link href="/">
+            <Text
+                _hover={{textDecor: "underline"}}
+            >
+                Home
+            </Text>
+        </Link>
+        <Link href="/builds">
+            <Text
+                _hover={{textDecor: "underline"}}
+            >
+                Builds
+            </Text>
+        </Link>
+        <Link href="/guestbook">
+            <Text
+                _hover={{textDecor: "underline"}}
+            >
+                Guestbook
+            </Text>
+        </Link>
     </Flex>
   )
 }
