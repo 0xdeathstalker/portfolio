@@ -4,7 +4,7 @@ import About from '../components/Sections/About'
 import Hero from '../components/Sections/Hero'
 import Work from '../components/Sections/Work'
 import Links from '../components/Sections/Links'
-import { DEFAULT_FONT_SIZES, DEFAULT_X_PADDING } from '../lib/constants/ui'
+import { DEFAULT_FONT_SIZES, DEFAULT_X_MARGIN, DEFAULT_X_PADDING } from '../lib/constants/ui'
 import Footer from '../components/Sections/Footer'
 import Navbar from '../components/Misc/Navbar'
 
@@ -13,6 +13,7 @@ export default function Home() {
     <Box 
       minH="100vh" 
       minW="full"
+      maxW="896px"
       bg="primary" 
       py={{
         base: "10",
@@ -20,7 +21,6 @@ export default function Home() {
         lg: "36"
       }}
       display="flex"
-      // flexDirection={{base: "column", md: "row"}}
       alignItems="center" 
       justifyContent="center" 
       color="white"
@@ -29,6 +29,7 @@ export default function Home() {
     >
       <Flex
         px={DEFAULT_X_PADDING}
+        // mx={{base: "4", lg: "auto"}}
         gap={{base: "8", md:"16"}}
         direction={{base: "column", md: "row"}}
       >

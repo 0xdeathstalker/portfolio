@@ -21,6 +21,7 @@ const NowPlaying = () => {
                     textDecor="none"
                     _hover={{textDecor: "none"}}
                     noOfLines={1}
+                    color="neutral.200"
                 >
                     Listening to {data?.title}
                 </Link>
@@ -28,7 +29,7 @@ const NowPlaying = () => {
         ) : (
             <Flex alignItems="center" gap="2">
                 <BsSpotify size={22} />
-                <Text>Not playing anything</Text>
+                <Text color="neutral.400">Not playing anything</Text>
             </Flex>
         )}
     </Flex>

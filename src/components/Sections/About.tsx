@@ -1,11 +1,9 @@
 import { FC } from "react"
-import { Flex, Link, Text } from "@chakra-ui/react"
-import {TwitterLogoIcon, ArrowTopRightIcon, GitHubLogoIcon} from "@radix-ui/react-icons"
+import { Flex, Text, Link } from "@chakra-ui/react"
+import { TwitterLogoIcon, ArrowTopRightIcon, GitHubLogoIcon } from "@radix-ui/react-icons"
 
 import { ExternalLinks } from "../../lib/constants/urls"
 import NowPlaying from "../Misc/NowPlaying"
-
-
 
 interface IItemProps {
     name: string,
@@ -39,7 +37,7 @@ const Item: FC<IItemProps> = ({name, url}) => {
 
 const Connects: FC = () => {
     return (
-        <Flex w="full" gap="4" pt="8">
+        <Flex w="full" gap={{base: "4", md: "6"}} pt="8">
             {ExternalLinks.map((link, index) => (
                 <Item 
                     key={index}
