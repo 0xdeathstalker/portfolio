@@ -2,11 +2,8 @@ import { Box, Flex } from '@chakra-ui/react'
 
 import About from '../components/Sections/About'
 import Hero from '../components/Sections/Hero'
-import Work from '../components/Sections/Work'
-import Links from '../components/Sections/Links'
-import { DEFAULT_FONT_SIZES, DEFAULT_X_MARGIN, DEFAULT_X_PADDING } from '../lib/constants/ui'
-import Footer from '../components/Sections/Footer'
 import Navbar from '../components/Misc/Navbar'
+import { DEFAULT_FONT_SIZES, DEFAULT_X_MARGIN, DEFAULT_X_PADDING } from '../lib/constants/ui'
 
 export default function Home() {
   return (
@@ -21,17 +18,16 @@ export default function Home() {
         lg: "36"
       }}
       display="flex"
-      alignItems="center" 
+      alignItems={{ md: "center" }} 
       justifyContent="center" 
       color="white"
-      fontSize={DEFAULT_FONT_SIZES}
+      fontSize={ DEFAULT_FONT_SIZES }
       overflowX="hidden"
     >
       <Flex
-        px={DEFAULT_X_PADDING}
-        // mx={{base: "4", lg: "auto"}}
-        gap={{base: "8", md:"16"}}
-        direction={{base: "column", md: "row"}}
+        px={ DEFAULT_X_PADDING }
+        gap={{ base: "8", md:"16" }}
+        direction={{ base: "column", md: "row" }}
       >
         <Navbar />
         <Flex 
@@ -40,9 +36,6 @@ export default function Home() {
         >
           <Hero />
           <About />
-          {/* <Work />
-          <Links />
-          <Footer /> */}
         </Flex>
       </Flex>
     </Box>
