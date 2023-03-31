@@ -4,7 +4,7 @@ import About from '../components/Sections/About'
 import Hero from '../components/Sections/Hero'
 import Navbar from '../components/Misc/Navbar'
 import { DEFAULT_FONT_SIZES, DEFAULT_X_MARGIN, DEFAULT_X_PADDING } from '../lib/constants/ui'
-import Builds from '../components/Sections/Builds'
+import MinimalBuilds from '../components/Misc/MinimalBuilds'
 
 export default function Home() {
   return (
@@ -38,7 +38,7 @@ export default function Home() {
           <Hero />
           <About />
           <Hide above="md">
-            <Builds />
+            <MinimalBuilds />
           </Hide>
         </Flex>
       </Flex>

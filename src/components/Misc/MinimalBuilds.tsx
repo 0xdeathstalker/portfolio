@@ -26,11 +26,11 @@ const Item: FC<IITemProps> = ({aboutTime, name, url}) => {
     )
 }
 
-const Work = () => {
+const MinimalBuilds = () => {
   return (
     <Flex color="neutral.100" gap="4" alignItems="center" w="full">
         <Flex direction="column" gap="4">
-            <Text fontWeight="500">Builds</Text>
+            <Text fontWeight="500">Builds at a glance</Text>
             <Flex direction="column" gap="6">
                 {Builds.map((build, index) => (
                     <Item
@@ -46,4 +46,4 @@ const Work = () => {
   )
 }
 
-export default Work
+export default MinimalBuilds

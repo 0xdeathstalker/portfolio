@@ -7,7 +7,7 @@ const Builds = () => {
   return (
     <Flex direction="column" color="neutral.300">
         <Text 
-            ml={{md: "3"}} 
+            ml={{ md: "3" }} 
             mb="5" 
             color="neutral.200" 
             fontWeight="500"
@@ -16,18 +16,18 @@ const Builds = () => {
         </Text>
         
         <Grid
-            templateColumns={{md: "repeat(2, 1fr)"}}
+            templateColumns={{ md: "repeat(2, 1fr)" }}
             templateRows="repeat(2, 1fr)"
             gap="5"
         >
-            {allBuilds.map((item, index) => (
-                <GridItem key={index}>
+            {allBuilds.map(( item, index ) => (
+                <GridItem key={ index }>
                     <StyledLink 
-                        name={item.name}
-                        description={item.description}
-                        url={item.url}
-                        githubRepo={item.githubRepo}
-                        aboutTime={item.aboutTime}
+                        name={ item.name }
+                        description={ item.description }
+                        url={ item.url }
+                        githubRepo={ item.githubRepo }
+                        aboutTime={ item.aboutTime }
                     />
                 </GridItem>
             ))}
