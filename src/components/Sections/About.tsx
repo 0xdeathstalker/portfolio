@@ -39,16 +39,18 @@ const Item: FC<IItemProps> = ({name, url, username}) => {
         
             <Hide above="md">
                 <Link
+                    w="full"
                     display="flex"
                     alignItems="center"
+                    justifyContent="space-between"
                     href={url}
                     isExternal
                 >
                     <Flex alignItems="center">
                         {name === "Twitter" ? <TwitterLogoIcon /> : <GitHubLogoIcon />}
-                        <Text px='2' fontSize={{ base: "sm" }}>{username}</Text>
+                        <Text px="2" fontSize={{ base: "sm" }}>{username}</Text>
+                        <ArrowTopRightIcon />
                     </Flex>
-                    <ArrowTopRightIcon />
                 </Link>
             </Hide>
         </>
