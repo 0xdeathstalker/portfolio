@@ -24,7 +24,7 @@ const builds = () => {
     >
       <Flex
         px={ DEFAULT_X_PADDING }
-        gap="12"
+        gap="8"
         direction={{ base: "column", md: "row" }}
       >
         <Navbar />

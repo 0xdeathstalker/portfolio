@@ -4,11 +4,11 @@ import Link from 'next/link'
 const Navbar = () => {
   return (
     <Flex
-        direction={{base: "row", md: "column"}}
-        alignItems={{base: "center", md: "start"}}
+        direction={{ base: "row", md: "column" }}
+        alignItems={{ base: "center", md: "start" }}
         gap="4"
         fontSize={{ md: "md" }}
-        mt={{md: "7"}}
+        mt={{ md: "7" }}
         color="neutral.500"
     >
         <Link href="/">

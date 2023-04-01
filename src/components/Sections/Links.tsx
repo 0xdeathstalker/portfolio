@@ -10,7 +10,7 @@ interface IItemProps {
     username?: string;
 }
 
-const Item: FC<IItemProps> = ({ name, url, username }) => {
+const BoxItem: FC<IItemProps> = ({ name, url, username }) => {
     return (
         <Link
             w="full"
@@ -35,12 +35,29 @@ const Item: FC<IItemProps> = ({ name, url, username }) => {
     )
 }
 
+const LinkItem: FC<IItemProps> = ({ name, url, username }) => {
+    return (
+        <Link
+            isExternal
+            href={url}
+        >
+            <Flex alignItems="center" gap="3">
+                <Flex alignItems="center">
+                    {name === "Twitter" ? <TwitterLogoIcon /> : <GitHubLogoIcon />}
+                    <Text ml="1">{username}</Text>
+                </Flex>
+                <ArrowTopRightIcon />
+            </Flex>
+        </Link>
+    )
+}
+
 const Links = () => {
   return (
     <Flex color="neutral.100" gap="4" alignItems="center" w="full">
         <Flex gap="6" w="full">
             {ExternalLinks.map(( link, index ) => (
-                <Item 
+                <LinkItem 
                     key={ index }
                     name={ link.name }
                     url={ link.url }
