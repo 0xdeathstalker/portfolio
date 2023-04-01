@@ -10,14 +10,14 @@ const Builds: IBuild[] = [
     {
         aboutTime: "2022",
         name: "Time stone",
-        description: "An ecommerce project built with the idea of providing a delightful user experience for an online watches store. Elegant design primarily for web view and dark colour scheme. Any suggestions for improving the UI will also be welcomed.",
+        description: "An ecommerce application built with Next.js, Tailwind and GraphQL.",
         url: "https://time-stone.vercel.app/",
         githubRepo: "https://github.com/Im-Soumya/Time-Stone"
     },
     {
         aboutTime: "2022",
         name: "Messaging Application",
-        description: "A simple messaging application built to provide a clean user experience with Next.js, Tailwind and Firebase. 1-on-1 messaging ability is provided.",
+        description: "A simple messaging application built to provide a clean user experience.",
         url: "https://next-chat-app-beta.vercel.app/",
         githubRepo: "https://github.com/Im-Soumya/Messaging-Application"
     },

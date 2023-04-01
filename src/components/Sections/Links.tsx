@@ -38,13 +38,18 @@ const BoxItem: FC<IItemProps> = ({ name, url, username }) => {
 const LinkItem: FC<IItemProps> = ({ name, url, username }) => {
     return (
         <Link
+            color="neutral.400"
+            _hover={{ 
+                textDecor: "none",
+                color: "neutral.300"
+            }}
             isExternal
             href={url}
         >
-            <Flex alignItems="center" gap="3">
+            <Flex alignItems="center" gap="1">
                 <Flex alignItems="center">
                     {name === "Twitter" ? <TwitterLogoIcon /> : <GitHubLogoIcon />}
-                    <Text ml="1">{username}</Text>
+                    <Text ml="2">{username}</Text>
                 </Flex>
                 <ArrowTopRightIcon />
             </Flex>

@@ -32,7 +32,7 @@ export default function Home() {
         <Navbar />
         <Flex 
           direction="column"
-          gap="12"
+          gap="10"
         >
           <Hero />
           <About />

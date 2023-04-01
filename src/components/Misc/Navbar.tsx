@@ -31,7 +31,7 @@ const Navbar = () => {
                 Builds
             </Text>
         </Link>
-        <Link href="/guestbook">
+        {/* <Link href="/guestbook">
             <Text
                 _hover={{
                     textDecor: "underline",
@@ -40,7 +40,7 @@ const Navbar = () => {
             >
                 Guestbook
             </Text>
-        </Link>
+        </Link> */}
     </Flex>
   )
 }
