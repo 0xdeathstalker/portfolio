@@ -16,7 +16,7 @@ const builds = () => {
         md: "20",
       }}
       display="flex"
-      alignItems={{ md: "center" }} 
+      alignItems="center"
       justifyContent="center" 
       color="white"
       fontSize={ DEFAULT_FONT_SIZES }
