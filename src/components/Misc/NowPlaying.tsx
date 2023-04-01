@@ -1,6 +1,7 @@
 import { Flex, Text, Link } from '@chakra-ui/react'
 import { useQuery } from '@tanstack/react-query'
-import {BsSpotify} from "react-icons/bs"
+import { BsSpotify } from "react-icons/bs"
+
 import { getNowPlaying } from '../../utils/helpers/getNowPlaying'
 
 const NowPlaying = () => {
@@ -11,7 +12,7 @@ const NowPlaying = () => {
     })
 
   return (
-    <Flex mt="2" gap="2" alignItems="center">
+    <Flex mt="5" gap="2" alignItems="center">
         {data?.isPlaying? (
             <Flex alignItems="center" gap="2">
                 <BsSpotify size={22} color="#1DB954" />

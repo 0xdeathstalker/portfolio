@@ -12,8 +12,10 @@ interface IStyledLink {
 
 const StyledLink: FC<IStyledLink> = ({ name, url, description, aboutTime, githubRepo }) => {
   return (
-    <Flex 
+    <Flex
+      h="full"
       direction="column"
+      justifyContent="space-between"
       p="5"
       border="1px"
       borderColor="neutral.800"

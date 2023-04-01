@@ -1,4 +1,4 @@
-import { Grid, Flex, Text, GridItem, Link } from "@chakra-ui/react"
+import { Grid, Flex, Text, GridItem } from "@chakra-ui/react"
 
 import { Builds as allBuilds } from "../../lib/constants/build"
 import StyledLink from "../Misc/helpers/StyledLink"
@@ -18,7 +18,7 @@ const Builds = () => {
         <Grid
             templateColumns={{ md: "repeat(2, 1fr)" }}
             templateRows="repeat(2, 1fr)"
-            gap="5"
+            gap="4"
         >
             {allBuilds.map(( item, index ) => (
                 <GridItem key={ index }>

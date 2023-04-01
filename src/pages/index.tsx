@@ -1,10 +1,10 @@
-import { Box, Flex, Hide } from '@chakra-ui/react'
+import { Box, Flex } from '@chakra-ui/react'
 
 import About from '../components/Sections/About'
 import Hero from '../components/Sections/Hero'
 import Navbar from '../components/Misc/Navbar'
-import { DEFAULT_FONT_SIZES, DEFAULT_X_MARGIN, DEFAULT_X_PADDING } from '../lib/constants/ui'
-import MinimalBuilds from '../components/Misc/MinimalBuilds'
+import Links from '../components/Sections/Links'
+import { DEFAULT_FONT_SIZES, DEFAULT_X_PADDING } from '../lib/constants/ui'
 
 export default function Home() {
   return (
@@ -16,7 +16,6 @@ export default function Home() {
       py={{
         base: "10",
         md: "20",
-        lg: "36"
       }}
       display="flex"
       alignItems={{ md: "center" }} 
@@ -37,9 +36,7 @@ export default function Home() {
         >
           <Hero />
           <About />
-          <Hide above="md">
-            <MinimalBuilds />
-          </Hide>
+          <Links />
         </Flex>
       </Flex>
     </Box>
