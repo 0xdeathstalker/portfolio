@@ -17,4 +17,6 @@ const ExternalLinks: ILink[] = [
     }
 ]
 
-export {ExternalLinks}
+const GITHUB_REPOSITORIES = "https://github.com/Im-Soumya?tab=repositories"
+
+export { ExternalLinks, GITHUB_REPOSITORIES }

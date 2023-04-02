@@ -1,6 +1,5 @@
 import { Box, Flex } from "@chakra-ui/react"
 
-import Navbar from "../components/Misc/Navbar"
 import Builds from "../components/Sections/Builds"
 import { DEFAULT_X_PADDING, DEFAULT_FONT_SIZES } from "../lib/constants/ui"
 
@@ -9,7 +8,6 @@ const builds = () => {
     <Box 
       minH="100vh" 
       minW="full"
-      maxW="896px"
       bg="primary" 
       py={{
         base: "10",
@@ -22,17 +20,11 @@ const builds = () => {
       fontSize={ DEFAULT_FONT_SIZES }
       overflowX="hidden"
     >
-      <Flex
+      <Flex 
         px={ DEFAULT_X_PADDING }
-        gap={{ base: "8", md: 16 }}
-        direction={{ base: "column", md: "row" }}
+        direction="column"
       >
-        <Navbar />
-        <Flex 
-          direction="column"
-        >
-          <Builds />
-        </Flex>
+        <Builds />
       </Flex>
     </Box>
   )

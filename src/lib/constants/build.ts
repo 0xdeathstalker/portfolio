@@ -17,7 +17,7 @@ const Builds: IBuild[] = [
     {
         aboutTime: "2022",
         name: "Messaging Application",
-        description: "A simple messaging application built to provide a clean user experience.",
+        description: "A simple messaging application built to provide a clean UX.",
         url: "https://next-chat-app-beta.vercel.app/",
         githubRepo: "https://github.com/Im-Soumya/Messaging-Application"
     },

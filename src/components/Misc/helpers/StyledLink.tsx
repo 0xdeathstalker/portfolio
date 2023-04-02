@@ -21,7 +21,7 @@ const StyledLink: FC<IStyledLink> = ({ name, url, description, aboutTime, github
       borderColor="neutral.800"
       borderRadius="8px"
       color="neutral.200"
-      _hover={{ bg: "neutral.900" }}
+      // _hover={{ bg: "neutral.900" }}
     >
       
       <Text

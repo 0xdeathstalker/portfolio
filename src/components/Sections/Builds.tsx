@@ -1,9 +1,11 @@
 import { FC } from "react"
-import { Grid, Flex, Text, GridItem, Link } from "@chakra-ui/react"
-import { ArrowTopRightIcon } from "@radix-ui/react-icons";
+import Link from "next/link";
+import { Grid, Flex, Text, GridItem, Link as CLink } from "@chakra-ui/react"
+import { ArrowTopRightIcon, GitHubLogoIcon } from "@radix-ui/react-icons";
 
 import { Builds as allBuilds } from "../../lib/constants/build"
 import StyledLink from "../Misc/helpers/StyledLink"
+import { GITHUB_REPOSITORIES } from "../../lib/constants/urls";
 
 interface ILinkItem {
     aboutTime: string;
@@ -13,51 +15,54 @@ interface ILinkItem {
     githubRepo?: string;
 }
 
-const LinkItem: FC<ILinkItem> = ({ name, aboutTime, url }) => {
+const LinkItem: FC<ILinkItem> = ({ name, description, aboutTime, url, githubRepo }) => {
     return (
         <Flex 
             w="full"
-            alignItems="center"
-            justifyContent="space-between"
+            alignItems="center" 
             gap="6"
-            p="4"
-            border="1px"
-            borderRadius="8px"
-            borderColor="neutral.800"
         >
-            <Text>{name}</Text>
-            <ArrowTopRightIcon />
+            <Text color="neutral.500" w="20">{aboutTime}</Text>
+
+            <Flex direction="column">
+                <Flex alignItems="center" gap="6" mb="2">
+                    <CLink href={url} isExternal>
+                        <Text color="neutral.300" display="flex" alignItems="center" gap="1">
+                            <Text as="span">{name}</Text>
+                            <ArrowTopRightIcon />
+                        </Text>
+                    </CLink>
+
+                    <CLink href={githubRepo} isExternal>
+                        <GitHubLogoIcon />
+                    </CLink>
+                </Flex>
+                
+                <Text fontSize={{ base: "xs", md: "sm" }} color="neutral.400">{description}</Text>
+            </Flex>
         </Flex>
     )
 }
 
 const LinkBuilds: FC = () => {
     return (
-        <Flex direction="column" gap="3">
-            <Text 
-                ml={{ md: "3" }} 
-                color="neutral.200" 
-                fontWeight="500"
-            >
-                Builds
-            </Text>
+        <Flex direction="column" gap="7">
+            <Text fontWeight="500">Builds</Text>
 
-            <Grid
-                templateColumns={{ md: "repeat(2, 1fr)" }}
-                templateRows="repeat(2, 1fr)"
-                gap="4"
-            >
+            <Flex direction="column" gap="12">
                 {allBuilds.map(( build, index ) => (
-                    <GridItem key={index}>
-                        <LinkItem 
-                            key={index}
-                            name={build.name}
-                            aboutTime={build.aboutTime}
-                            url={build.url}
-                        />
-                    </GridItem>
+                    <LinkItem 
+                        key={index}
+                        name={build.name}
+                        aboutTime={build.aboutTime}
+                        description={build.description}
+                        url={build.url}
+                        githubRepo={build.githubRepo}
+                    />
                 ))}
-            </Grid>
+            </Flex>
+
+            <NavLinks />
         </Flex>
     )
 }
@@ -66,14 +71,14 @@ const BoxBuilds: FC = () => {
     return (
         <Flex direction="column" gap="3" color="neutral.300">
             <Text 
-                ml={{ md: "3" }} 
+                ml="3"
                 color="neutral.200" 
                 fontWeight="500"
             >
                 Builds
             </Text>
         
-            <Grid
+            {/* <Grid
                 templateColumns={{ md: "repeat(2, 1fr)" }}
                 templateRows="repeat(2, 1fr)"
                 gap="4"
@@ -89,14 +94,58 @@ const BoxBuilds: FC = () => {
                         />
                     </GridItem>
                 ))}
-            </Grid>
+            </Grid> */}
+
+            <Flex direction="column" gap="4">
+                {allBuilds.map(( item, index ) => (
+                    <StyledLink
+                        key={index} 
+                        name={item.name}
+                        description={item.description}
+                        url={item.url}
+                        githubRepo={item.githubRepo}
+                        aboutTime={item.aboutTime}
+                    />
+                ))}
+            </Flex>
+        </Flex>
+    )
+}
+
+const NavLinks: FC = () => {
+    return (
+        <Flex mt="4" color="neutral.500" fontFamily="secondary" justifyContent="center" gap="6">
+            <Link 
+                href="/"
+                style={{
+                    display: "flex",
+                    alignItems: "center",
+                    gap: "2px",
+                }}
+            >
+                <Text display="flex" alignItems="center" gap="1" _hover={{ color: "neutral.200" }}>
+                    <Text as="span" fontWeight="500">about me</Text>
+                    <ArrowTopRightIcon />
+                </Text>
+            </Link>
+
+            <CLink 
+                _hover={{ color: "neutral.200"}}
+                href={GITHUB_REPOSITORIES} 
+                isExternal
+            >
+                <Text display="flex" alignItems="center" gap="1" _hover={{ color: "neutral.200" }}>
+                    <Text as="span">view more</Text>
+                    <ArrowTopRightIcon />
+                </Text>
+            </CLink>
         </Flex>
     )
 }
 
 const Builds = () => {
   return (
-    <BoxBuilds />
+    <LinkBuilds />
   )
 }
 

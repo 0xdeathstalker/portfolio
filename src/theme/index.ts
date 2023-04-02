@@ -8,7 +8,7 @@ const theme = extendTheme({
     },
     fonts: {
         body: "General Sans, sans-serif",
-        secondary: "Ranade, sans-serif"
+        secondary: "Cabinet Grotesk, sans-serif",
     }
 })
 

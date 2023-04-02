@@ -7,7 +7,7 @@ const Navbar = () => {
         direction={{ base: "row", md: "column" }}
         alignItems={{ base: "center", md: "start" }}
         gap="4"
-        fontSize={{ md: "md" }}
+        fontSize={{ base: "md", md: "md" }}
         mt={{ md: "7" }}
         color="neutral.500"
     >
