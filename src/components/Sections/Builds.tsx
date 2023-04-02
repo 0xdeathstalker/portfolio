@@ -20,7 +20,7 @@ const LinkItem: FC<ILinkItem> = ({ name, description, aboutTime, url, githubRepo
         <Flex 
             w="full"
             alignItems="center" 
-            gap="4"
+            gap="6"
         >
             <Text color="neutral.500" w="20">{aboutTime}</Text>
 
@@ -38,7 +38,7 @@ const LinkItem: FC<ILinkItem> = ({ name, description, aboutTime, url, githubRepo
                     </CLink>
                 </Flex>
                 
-                <Text fontSize={{ base: "xs", md: "sm" }} color="neutral.400">{description}</Text>
+                <Text fontSize="sm" color="neutral.400">{description}</Text>
             </Flex>
         </Flex>
     )
@@ -49,7 +49,7 @@ const LinkBuilds: FC = () => {
         <Flex direction="column" gap="7">
             <Text fontWeight="500">Builds</Text>
 
-            <Flex direction="column" gap="12">
+            <Flex direction="column" gap="10">
                 {allBuilds.map(( build, index ) => (
                     <LinkItem 
                         key={index}
