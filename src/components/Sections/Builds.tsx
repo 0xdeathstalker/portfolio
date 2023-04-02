@@ -20,7 +20,7 @@ const LinkItem: FC<ILinkItem> = ({ name, description, aboutTime, url, githubRepo
         <Flex 
             w="full"
             alignItems="center" 
-            gap="6"
+            gap="4"
         >
             <Text color="neutral.500" w="20">{aboutTime}</Text>
 
