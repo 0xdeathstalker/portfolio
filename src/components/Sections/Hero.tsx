@@ -9,7 +9,7 @@ const Hero = () => {
         alignItems="center"
     >
         <Avatar 
-            src="/images/image.jpg"
+            src="/images/avatar.jpg"
             size={{base: "lg", md: "xl"}}
             filter="grayscale(10%)"
             name='Soumya'
