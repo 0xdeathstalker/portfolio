@@ -1,10 +1,9 @@
 import { FC } from "react"
 import Link from "next/link";
-import { Grid, Flex, Text, GridItem, Link as CLink } from "@chakra-ui/react"
+import { Flex, Text, Link as CLink } from "@chakra-ui/react"
 import { ArrowTopRightIcon, GitHubLogoIcon } from "@radix-ui/react-icons";
 
 import { Builds as allBuilds } from "../../lib/constants/build"
-import StyledLink from "../Misc/helpers/StyledLink"
 import { GITHUB_REPOSITORIES } from "../../lib/constants/urls";
 
 interface ILinkItem {
@@ -63,51 +62,6 @@ const LinkBuilds: FC = () => {
             </Flex>
 
             <NavLinks />
-        </Flex>
-    )
-}
-
-const BoxBuilds: FC = () => {
-    return (
-        <Flex direction="column" gap="3" color="neutral.300">
-            <Text 
-                ml="3"
-                color="neutral.200" 
-                fontWeight="500"
-            >
-                Builds
-            </Text>
-        
-            {/* <Grid
-                templateColumns={{ md: "repeat(2, 1fr)" }}
-                templateRows="repeat(2, 1fr)"
-                gap="4"
-            >
-                {allBuilds.map(( item, index ) => (
-                    <GridItem key={ index }>
-                        <StyledLink 
-                            name={ item.name }
-                            description={ item.description }
-                            url={ item.url }
-                            githubRepo={ item.githubRepo }
-                            aboutTime={ item.aboutTime }
-                        />
-                    </GridItem>
-                ))}
-            </Grid> */}
-
-            <Flex direction="column" gap="4">
-                {allBuilds.map(( item, index ) => (
-                    <StyledLink
-                        key={index} 
-                        name={item.name}
-                        description={item.description}
-                        url={item.url}
-                        githubRepo={item.githubRepo}
-                        aboutTime={item.aboutTime}
-                    />
-                ))}
-            </Flex>
         </Flex>
     )
 }
