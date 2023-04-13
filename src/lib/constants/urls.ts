@@ -7,8 +7,8 @@ interface ILink {
 const ExternalLinks: ILink[] = [
     {
         name: "Twitter",
-        url: "https://twitter.com/iamsoumyass",
-        username: "iamsoumyass",
+        url: "https://twitter.com/0xdeathstalker",
+        username: "0xdeathstalker",
     },
     {
         name: "Github",

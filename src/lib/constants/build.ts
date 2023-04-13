@@ -8,18 +8,18 @@ interface IBuild {
 
 const Builds: IBuild[] = [
     {
+        aboutTime: "2023",
+        name: "Buy me a Coffee Defi",
+        description: `A decentralized "buy me a coffee" website.`,
+        url: "https://buy-me-coffee-defi.vercel.app",
+        githubRepo: "https://github.com/Im-Soumya/buy-me-coffee"
+    },
+    {
         aboutTime: "2022",
         name: "Time stone",
         description: "An ecommerce application built with Next.js, Tailwind and GraphQL.",
         url: "https://time-stone.vercel.app/",
         githubRepo: "https://github.com/Im-Soumya/Time-Stone"
-    },
-    {
-        aboutTime: "2022",
-        name: "Messaging Application",
-        description: "A simple messaging application built to provide a clean UX.",
-        url: "https://next-chat-app-beta.vercel.app/",
-        githubRepo: "https://github.com/Im-Soumya/Messaging-Application"
     },
     {
         aboutTime: "2022",
