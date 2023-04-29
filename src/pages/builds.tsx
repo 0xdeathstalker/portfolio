@@ -1,33 +1,28 @@
-import { Box, Flex } from "@chakra-ui/react"
+import { Box, Flex } from '@chakra-ui/react'
+import Builds from '../components/Sections/Builds'
+import Navbar from '../components/Sections/Navbar'
 
-import Builds from "../components/Sections/Builds"
-import { DEFAULT_X_PADDING, DEFAULT_FONT_SIZES } from "../lib/constants/ui"
+import { DEFAULT_FONT_SIZES, DEFAULT_X_PADDING } from '../lib/constants/ui'
 
-const builds = () => {
+export default function Home() {
   return (
-    <Box 
-      minH="100vh" 
-      minW="full"
-      bg="primary" 
-      py={{
-        base: "10",
-        md: "20",
-      }}
-      display="flex"
-      alignItems="center"
-      justifyContent="center" 
+    <Box
+      minH="100vh"
+      bg="primary"
       color="white"
-      fontSize={ DEFAULT_FONT_SIZES }
+      display="flex"
+      flexDirection={{ base: "column", md: "row" }}
+      alignItems={{ md: "start", lg: "center" }}
+      justifyContent={{ md: "start", lg: "center" }}
+      py={{ base: "7", md: "40" }}
+      px={DEFAULT_X_PADDING}
+      fontSize={DEFAULT_FONT_SIZES}
       overflowX="hidden"
     >
-      <Flex 
-        px={ DEFAULT_X_PADDING }
-        direction="column"
-      >
+      <Flex direction={{ base: "column", md: "row" }} gap={{ base: "6", md: "20" }}>
+        <Navbar />
         <Builds />
       </Flex>
     </Box>
   )
 }
-
-export default builds

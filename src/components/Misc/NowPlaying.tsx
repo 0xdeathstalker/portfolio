@@ -12,9 +12,9 @@ const NowPlaying = () => {
     })
 
   return (
-    <Flex mt="5" gap="2" alignItems="center">
+    <Flex flexGrow="1" p="5" gap="2" alignItems="center" backgroundColor="neutral.900" borderRadius="8px">
         {data?.isPlaying? (
-            <Flex alignItems="center" gap="2">
+            <Flex alignItems="center" gap="3">
                 <BsSpotify size={22} color="#1DB954" />
                 <Link 
                     href={data?.url}
@@ -22,15 +22,15 @@ const NowPlaying = () => {
                     textDecor="none"
                     _hover={{textDecor: "none"}}
                     noOfLines={1}
-                    color="neutral.200"
+                    color="neutral.300"
                 >
                     Listening to {data?.title}
                 </Link>
             </Flex>
         ) : (
-            <Flex alignItems="center" gap="2">
+            <Flex alignItems="center" gap="3">
                 <BsSpotify size={22} />
-                <Text color="neutral.400">Not playing anything</Text>
+                <Text color="neutral.500" >Currently not playing anything</Text>
             </Flex>
         )}
     </Flex>

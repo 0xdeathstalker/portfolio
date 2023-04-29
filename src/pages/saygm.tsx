@@ -1,10 +1,10 @@
-import { Box, Flex } from '@chakra-ui/react'
-import Hero from '../components/Sections/Hero'
-import Navbar from '../components/Sections/Navbar'
+import { Box, Flex, Text } from "@chakra-ui/react"
+import Gm from "../components/Sections/Gm"
 
-import { DEFAULT_FONT_SIZES, DEFAULT_X_PADDING } from '../lib/constants/ui'
+import Navbar from "../components/Sections/Navbar"
+import { DEFAULT_FONT_SIZES, DEFAULT_X_PADDING } from "../lib/constants/ui"
 
-export default function Home() {
+const saygm = () => {
   return (
     <Box
       minH="100vh"
@@ -21,8 +21,10 @@ export default function Home() {
     >
       <Flex direction={{ base: "column", md: "row" }} gap={{ base: "7", md: "20" }}>
         <Navbar />
-        <Hero />
+        <Gm />
       </Flex>
     </Box>
   )
 }
+
+export default saygm

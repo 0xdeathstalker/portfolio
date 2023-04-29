@@ -17,6 +17,7 @@ const ExternalLinks: ILink[] = [
     }
 ]
 
-const GITHUB_REPOSITORIES = "https://github.com/Im-Soumya?tab=repositories"
+const GITHUB_PROFILE = "https://github.com/Im-Soumya"
+const TWITTER_PROFILE = "https://twitter.com/0xdeathstalker"
 
-export { ExternalLinks, GITHUB_REPOSITORIES }
+export { ExternalLinks, GITHUB_PROFILE, TWITTER_PROFILE }
