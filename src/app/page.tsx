@@ -24,7 +24,7 @@ export default function Home() {
               </Link>
             </li>
             <li>&#x2022; exploring fullstack dev.</li>
-            <li>&#x2022; trying to fix things.</li>
+            <li>&#x2022; trying to figure out things.</li>
           </ul>
         </div>
       </main>
