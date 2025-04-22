@@ -18,12 +18,12 @@ export default function Home() {
               &#x2022; frontend dev{' '}
               <Link
                 href='https://routerprotocol.com'
-                className='hover:underline underline-offset-2'
+                className='hover:underline underline-offset-2 text-blue-500'
               >
                 @routerprotocol
               </Link>
             </li>
-            <li>&#x2022; exploring fullstack dev.</li>
+            <li>&#x2022; exploring fullstack dev & web3.</li>
             <li>&#x2022; trying to figure out things.</li>
           </ul>
         </div>
