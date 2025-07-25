@@ -1,4 +1,4 @@
-import ScrambleText from './components/scramble-text';
+import ScrambleText from '@/components/scramble-text';
 
 export default function Home() {
   return (
