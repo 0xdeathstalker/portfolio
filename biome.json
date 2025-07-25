@@ -6,8 +6,8 @@
     "useIgnoreFile": true
   },
   "files": {
-    "ignore": ["node_modules/**"],
-    "ignoreUnknown": false
+    "ignoreUnknown": true,
+    "includes": ["**", "!node_modules", "!.next"]
   },
   "formatter": {
     "enabled": true,
@@ -39,9 +39,6 @@
         "noExplicitAny": "warn",
         "noArrayIndexKey": "warn",
         "noAsyncPromiseExecutor": "error"
-      },
-      "nursery": {
-        "useSortedClasses": "error"
       }
     }
   },

@@ -1,10 +1,6 @@
-import Hero from '@/components/sections/hero';
+import Hero from "@/components/sections/hero";
 
-export default function LandingPageLayout({
-  children,
-}: {
-  children: React.ReactNode;
-}) {
+export default function LandingPageLayout({ children }: { children: React.ReactNode }) {
   return (
     <main className="relative w-full lg:h-screen p-0 sm:p-5 font-mono">
       <div className="w-full h-full sm:border flex flex-wrap justify-between lg:divide-x">

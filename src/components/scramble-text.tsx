@@ -1,6 +1,6 @@
-'use client';
+"use client";
 
-import { useScramble } from 'use-scramble';
+import { useScramble } from "use-scramble";
 
 export default function ScrambleText({
   text,
@@ -24,5 +24,10 @@ export default function ScrambleText({
     scramble,
     seed,
   });
-  return <span ref={ref} className="font-sans text-teal-500 text-xl" />;
+  return (
+    <span
+      ref={ref}
+      className="font-sans text-teal-500 text-xl"
+    />
+  );
 }
