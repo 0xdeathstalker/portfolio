@@ -1,9 +1,9 @@
 'use client';
 
 import Link from 'next/link';
-import { cn } from '@/lib/utils';
 import { usePathname } from 'next/navigation';
 import type * as React from 'react';
+import { cn } from '@/lib/utils';
 
 const navbarConfig = [
   {
