@@ -16,7 +16,6 @@ const iconMap: Record<SocialKeys, React.ReactNode> = {
   github: <GitHubLogoIcon />,
   twitter: <TwitterLogoIcon />,
   mail: <Mail />,
-  // discord: <DiscordLogoIcon />,
   linkedin: <LinkedInLogoIcon />,
 };
 
@@ -35,11 +34,12 @@ export default function Socials() {
         const link = portfolio.socials[key];
         return (
           <Link
+            key={link}
             href={link}
             target="_blank"
             className={cn(
               buttonVariants({ variant: 'outline', size: 'icon' }),
-              'dark:bg-transparent'
+              'dark:bg-transparent border-dashed'
             )}
           >
             {iconMap[key]}
