@@ -7,11 +7,12 @@ export default function Hero() {
   return (
     <div>
       <h1 className="uppercase text-3xl font-semibold">{portfolio.author}</h1>
-      <h2 className="inline-flex items-center gap-2 text-muted-foreground text-sm mt-3">
+
+      <h2 className="inline-flex items-center gap-2 text-muted-foreground/50 text-sm mt-2">
         <MapPin className="w-4 h-4" /> kolkata, india
       </h2>
 
-      <p className="text-muted-foreground mt-3 text-sm">{portfolio.bio}</p>
+      <p className="text-muted-foreground mt-6 text-sm">{portfolio.bio}</p>
 
       <Socials />
 

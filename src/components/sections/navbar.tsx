@@ -45,7 +45,7 @@ function NavbarItem({ children, url }: NavbarItemProps) {
     <Link
       href={url}
       className={cn(
-        'text-sm',
+        'text-sm hover:text-foreground transition-colors ease-in-out',
         active ? 'text-foreground' : 'text-muted-foreground'
       )}
     >

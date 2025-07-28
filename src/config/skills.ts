@@ -20,7 +20,6 @@ export const skills = [
     technologies: [
       'ethers.js',
       'viem',
-      'web3.js',
       'evm wallets',
       'bitcoin wallets',
       'near wallets',

@@ -6,7 +6,7 @@ import {
 import { Mail } from 'lucide-react';
 import Link from 'next/link';
 import type * as React from 'react';
-import { buttonVariants } from '@/components/ui/button';
+import { Button, buttonVariants } from '@/components/ui/button';
 import { portfolio } from '@/config/site';
 import { cn } from '@/lib/utils';
 
@@ -15,13 +15,12 @@ type SocialKeys = keyof typeof portfolio.socials;
 const iconMap: Record<SocialKeys, React.ReactNode> = {
   github: <GitHubLogoIcon />,
   twitter: <TwitterLogoIcon />,
-  mail: <Mail />,
   linkedin: <LinkedInLogoIcon />,
 };
 
 export default function Socials() {
   return (
-    <div className="inline-flex items-center gap-2 my-8">
+    <div className="inline-flex items-center gap-2 my-10">
       <Link
         href={portfolio.resume}
         target="_blank"
@@ -46,6 +45,15 @@ export default function Socials() {
           </Link>
         );
       })}
+
+      {/* TODO: give two options to copy and redirect */}
+      <Button
+        variant="outline"
+        size="icon"
+        className="border-dashed dark:bg-transparent"
+      >
+        <Mail />
+      </Button>
     </div>
   );
 }
