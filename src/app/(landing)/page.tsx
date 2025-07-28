@@ -20,16 +20,24 @@ export function ProjectCard({ project }: { project: Project }) {
     <div className="border border-dashed p-6 space-y-3 text-muted-foreground group hover:border-foreground/40 transition-colors ease-in-out">
       <Link
         href={project.href}
+        target="_blank"
         className="inline-flex items-center gap-1 text-base text-white hover:underline underline-offset-4"
       >
         {project.title}
         {/* TODO: animate on hover  */}
         <ArrowTopRightIcon className="w-4 h-4 text-muted-foreground transition-colors ease-in-out group-hover:text-foreground" />
       </Link>
-      <h2 className="text-neutral-600 text-xs mt-3">
+      <h2 className="text-neutral-600 text-xs">
         {project.role} {project.period && `(${project.period})`}
       </h2>
       <p>{project.description}</p>
+      <div className="inline-flex items-center gap-3 flex-wrap">
+        {project.technologies.map((technology) => (
+          <div key={technology} className="p-1 bg-accent text-xs">
+            {technology}
+          </div>
+        ))}
+      </div>
     </div>
   );
 }
