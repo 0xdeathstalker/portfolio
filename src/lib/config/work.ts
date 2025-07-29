@@ -1,4 +1,6 @@
-export const work = [
+import { Work } from '../types';
+
+export const works: Array<Work> = [
   {
     company: 'router-protocol',
     role: 'frontend developer',

@@ -7,3 +7,11 @@ export type Project = {
   technologies: Array<string>;
   href: string;
 };
+
+export type Work = {
+  company: string;
+  role: string;
+  period: string;
+  description: string;
+  href: string;
+};
