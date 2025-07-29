@@ -5,7 +5,7 @@ import Link from 'next/link';
 
 export default function Projects() {
   return (
-    <div className=" py-10">
+    <div className="py-10">
       <h1 className="text-3xl font-medium mb-8">projects</h1>
       <div className="space-y-10">
         {projects.map((project) => (

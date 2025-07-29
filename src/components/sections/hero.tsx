@@ -1,6 +1,6 @@
 export default function Hero() {
   return (
-    <section>
+    <section className="pb-5">
       <h1 className="text-4xl font-medium mb-10">soumya mukherjee</h1>
       <p className="text-muted-foreground text-sm">
         i build fast, sharp frontends with react, next.js, and typescript.
