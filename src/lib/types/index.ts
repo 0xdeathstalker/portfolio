@@ -1,3 +1,5 @@
+import { portfolio } from '@/lib/config/site';
+
 export type Project = {
   title: string;
   description: string;
@@ -15,3 +17,5 @@ export type Work = {
   description: string;
   href: string;
 };
+
+export type SocialKeys = keyof typeof portfolio.socials;
