@@ -5,8 +5,8 @@ export const portfolio = {
     'https://drive.google.com/file/d/19NML86_Fj4YxKxNGYzT2qynNRJfFKJvv/view?usp=sharing',
   socials: {
     github: 'https://github.com/0xdeathstalker',
-    twitter: 'https://x.com/0xmukherjee',
     linkedin: 'https://www.linkedin.com/in/soumya-mukherjee-88a551248/',
     mail: 'mailto:soumyamukherjee.work@gmail.com',
+    twitter: 'https://x.com/0xmukherjee',
   },
 } as const;

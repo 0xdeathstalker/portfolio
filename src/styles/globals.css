@@ -121,3 +121,20 @@
     @apply bg-background text-foreground;
   }
 }
+
+.link:hover .link-svg:last-of-type {
+  transform: translateY(-500%) translateX(500%);
+}
+
+.link:hover .link-svg:first-of-type {
+  transform: translateY(0) translateX(0);
+}
+
+.link-svg {
+  grid-area: 1/1;
+  transition: transform 200ms cubic-bezier(0.785, 0.135, 0.15, 0.86);
+}
+
+.link-svg:first-of-type {
+  transform: translateY(500%) translateX(-500%);
+}

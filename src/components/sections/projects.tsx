@@ -1,7 +1,7 @@
 import { projects } from '@/lib/config/projects';
 import { Project } from '@/lib/types';
-import { ArrowUpRight } from 'lucide-react';
 import Link from 'next/link';
+import LinkIcon from '../link-icon';
 
 export default function Projects() {
   return (
@@ -19,21 +19,29 @@ export default function Projects() {
 export function ProjectCard({ project }: { project: Project }) {
   return (
     <div className="space-y-3 text-muted-foreground">
-      <Link
-        href={project.href}
-        target="_blank"
-        className="inline-flex items-center gap-1 text-base text-foreground hover:underline underline-offset-4 text-lg"
-      >
-        {project.title}
-        <ArrowUpRight className="w-4 h-4 text-foreground" />
-      </Link>
+      <div className="w-fit relative">
+        <Link
+          href={project.href}
+          target="_blank"
+          className="inline-flex items-center gap-1 text-foreground peer text-lg link"
+        >
+          {project.title}
+          <LinkIcon />
+        </Link>
+
+        <div className="absolute bottom-1 w-0 h-[1px] peer-hover:w-full bg-black transition-all ease-[cubic-bezier(0.785,0.135,0.15,0.86)] duration-300" />
+      </div>
+
       <h2 className="text-neutral-600 text-xs">
         {project.role} {project.period && `(${project.period})`}
       </h2>
       <p className="text-sm">{project.description}</p>
       <div className="inline-flex items-center gap-3 flex-wrap">
         {project.technologies.map((technology) => (
-          <div key={technology} className="p-1 bg-accent text-xs">
+          <div
+            key={technology}
+            className="py-1 px-1.5 bg-accent rounded-sm text-xs"
+          >
             {technology}
           </div>
         ))}
