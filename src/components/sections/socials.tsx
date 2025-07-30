@@ -15,11 +15,9 @@ export default function Socials() {
             key={key}
             href={link}
             target="_blank"
-            variant="outline"
-            size="icon"
             className={cn(
               buttonVariants({ variant: "outline", size: "icon" }),
-              "size-7 active:border-b active:scale-[0.97] hover:border-[0.2px] focus:border-[0.2px] focus:border-b-4 active:bg-background hover:bg-background hover:border-b-4 hover:border-primary/30 hover:bg-background shadow-none transition-all duration-100",
+              "size-7 active:border-b active:scale-[0.97] hover:border-[0.2px] focus:border-[0.2px] focus:border-b-4 active:bg-background hover:bg-background hover:border-b-4 hover:border-primary/30 shadow-none transition-all duration-100"
             )}
           >
             {IconMap[key]}

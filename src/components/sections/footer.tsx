@@ -1,7 +1,7 @@
-'use client';
+"use client";
 
-import { motion } from 'motion/react';
-import * as React from 'react';
+import { motion } from "motion/react";
+import * as React from "react";
 
 export default function Footer() {
   const textRef = React.useRef<HTMLHeadingElement>(null);
@@ -14,9 +14,9 @@ export default function Footer() {
       if (!textRef.current || !footerRef.current) return;
 
       const text = textRef.current;
-      const footer = footerRef.current;
+      // const footer = footerRef.current;
       const textRect = text.getBoundingClientRect();
-      const footerRect = footer.getBoundingClientRect();
+      // const footerRect = footer.getBoundingClientRect();
       const windowHeight = window.innerHeight;
 
       // calculating how much of the text is visible
@@ -29,13 +29,13 @@ export default function Footer() {
       const textVisibilityRatio = textVisibleHeight / textHeight;
 
       // calculating how much of the footer is visible
-      const footerTop = footerRect.top;
-      const footerHeight = footerRect.height;
-      const footerVisibleHeight = Math.max(
-        0,
-        Math.min(footerHeight, windowHeight - footerTop)
-      );
-      const footerVisibilityRatio = footerVisibleHeight / footerHeight;
+      // const footerTop = footerRect.top;
+      // const footerHeight = footerRect.height;
+      // const footerVisibleHeight = Math.max(
+      //   0,
+      //   Math.min(footerHeight, windowHeight - footerTop)
+      // );
+      // const footerVisibilityRatio = footerVisibleHeight / footerHeight;
 
       // mapping visibility ratio to font weight
       let newFontWeight = 100;
@@ -63,9 +63,9 @@ export default function Footer() {
       // setGradientOpacity(parseFloat(newGradientOpacity.toFixed(2)));
     };
 
-    window.addEventListener('scroll', handleScroll);
+    window.addEventListener("scroll", handleScroll);
 
-    return () => window.removeEventListener('scroll', handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
   return (
