@@ -1,7 +1,7 @@
-import { projects } from '@/lib/config/projects';
-import { Project } from '@/lib/types';
-import Link from 'next/link';
-import LinkIcon from '../link-icon';
+import Link from "next/link";
+import { projects } from "@/lib/config/projects";
+import type { Project } from "@/lib/types";
+import LinkIcon from "../link-icon";
 
 export default function Projects() {
   return (
@@ -9,7 +9,10 @@ export default function Projects() {
       <h1 className="text-3xl font-medium mb-8">projects</h1>
       <div className="space-y-10">
         {projects.map((project) => (
-          <ProjectCard key={project.title} project={project} />
+          <ProjectCard
+            key={project.title}
+            project={project}
+          />
         ))}
       </div>
     </div>

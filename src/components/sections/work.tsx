@@ -1,7 +1,7 @@
-import { works } from '@/lib/config/work';
-import type { Work as WorkType } from '@/lib/types';
-import Link from 'next/link';
-import LinkIcon from '../link-icon';
+import Link from "next/link";
+import { works } from "@/lib/config/work";
+import type { Work as WorkType } from "@/lib/types";
+import LinkIcon from "../link-icon";
 
 export default function Work() {
   return (
@@ -9,7 +9,11 @@ export default function Work() {
       <h1 className="text-3xl font-medium mb-8">work</h1>
       <div className="space-y-3">
         {works.map((work, index) => (
-          <WorkCard key={index} work={work} />
+          <WorkCard
+            // biome-ignore lint/suspicious/noArrayIndexKey: no other variable to use as key
+            key={index}
+            work={work}
+          />
         ))}
       </div>
     </div>

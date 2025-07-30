@@ -1,4 +1,4 @@
-import { portfolio } from '@/lib/config/site';
+import type { portfolio } from "@/lib/config/site";
 
 export type Project = {
   title: string;

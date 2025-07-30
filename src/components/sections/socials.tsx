@@ -1,9 +1,9 @@
-import { buttonVariants } from '@/components/ui/button';
-import { portfolio } from '@/lib/config/site';
-import { SocialKeys } from '@/lib/types';
-import { cn } from '@/lib/utils';
-import { Mail } from 'lucide-react';
-import Link from 'next/link';
+import { Mail } from "lucide-react";
+import Link from "next/link";
+import { buttonVariants } from "@/components/ui/button";
+import { portfolio } from "@/lib/config/site";
+import type { SocialKeys } from "@/lib/types";
+import { cn } from "@/lib/utils";
 
 export default function Socials() {
   return (
@@ -18,8 +18,8 @@ export default function Socials() {
             variant="outline"
             size="icon"
             className={cn(
-              buttonVariants({ variant: 'outline', size: 'icon' }),
-              'size-7 active:border-b active:scale-[0.97] hover:border-[0.2px] focus:border-[0.2px] focus:border-b-4 active:bg-background hover:bg-background hover:border-b-4 hover:border-primary/30 hover:bg-background shadow-none transition-all duration-100'
+              buttonVariants({ variant: "outline", size: "icon" }),
+              "size-7 active:border-b active:scale-[0.97] hover:border-[0.2px] focus:border-[0.2px] focus:border-b-4 active:bg-background hover:bg-background hover:border-b-4 hover:border-primary/30 hover:bg-background shadow-none transition-all duration-100",
             )}
           >
             {IconMap[key]}
