@@ -122,6 +122,7 @@
   }
 }
 
+/* external link arrow animation */
 .link:hover .link-svg:last-of-type {
   transform: translateY(-500%) translateX(500%);
 }
@@ -139,6 +140,7 @@
   transform: translateY(500%) translateX(-500%);
 }
 
+/* dark mode toggle styles */
 ::view-transition-group(root) {
   animation-timing-function: var(--expo-out);
 }
@@ -162,4 +164,15 @@
   to {
     mask-size: 350vmax;
   }
+}
+
+/* selection colours based on theme */
+::-moz-selection {
+  color: var(--background);
+  background: var(--foreground);
+}
+
+::selection {
+  color: var(--background);
+  background: var(--foreground);
 }
