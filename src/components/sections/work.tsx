@@ -7,7 +7,7 @@ export default function Work() {
   return (
     <div className="py-10">
       <h1 className="text-3xl font-medium mb-8">work</h1>
-      <div className="space-y-3">
+      <div className="space-y-12">
         {works.map((work, index) => (
           <WorkCard
             // biome-ignore lint/suspicious/noArrayIndexKey: no other variable to use as key
