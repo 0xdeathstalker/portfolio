@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "@/styles/globals.css";
 import Provider from "@/components/provider";
+import DynamicFavicon from "@/components/ui/favicon";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -15,6 +16,9 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
   title: "Deathstalker",
+  icons: {
+    icon: "/images/favicon-dark.ico", // default favicon
+  },
 };
 
 export default function RootLayout({
@@ -27,7 +31,10 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        <Provider>{children}</Provider>
+        <Provider>
+          <DynamicFavicon />
+          {children}
+        </Provider>
       </body>
     </html>
   );
