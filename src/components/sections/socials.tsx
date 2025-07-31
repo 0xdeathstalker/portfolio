@@ -1,7 +1,12 @@
-import { Mail } from "lucide-react";
+"use client";
+
+import { Check, Mail } from "lucide-react";
+import { AnimatePresence, motion } from "motion/react";
 import Link from "next/link";
-import { buttonVariants } from "@/components/ui/button";
+import * as React from "react";
+import { Button, buttonVariants } from "@/components/ui/button";
 import { portfolio } from "@/lib/config/site";
+import { useCopyToClipboard } from "@/lib/hooks/useCopyToClipboard";
 import type { SocialKeys } from "@/lib/types";
 import { cn } from "@/lib/utils";
 
@@ -24,7 +29,72 @@ export default function Socials() {
           </Link>
         );
       })}
+
+      <MailButton />
     </div>
+  );
+}
+
+function MailButton() {
+  const [, copy] = useCopyToClipboard();
+  const [isCopied, setIsCopied] = React.useState(false);
+  const buttonRef = React.useRef<HTMLButtonElement>(null);
+
+  async function handleCopy(textToCopy: string) {
+    if (isCopied) return;
+
+    const success = await copy(textToCopy);
+
+    if (success) {
+      setIsCopied(true);
+      buttonRef.current?.blur();
+      setTimeout(() => {
+        setIsCopied(false);
+        buttonRef.current?.blur();
+      }, 2000);
+    }
+  }
+
+  return (
+    <motion.button
+      ref={buttonRef}
+      layout
+      className={cn(
+        buttonVariants({ variant: "outline", size: "icon" }),
+        "cursor-pointer active:border-b active:scale-[0.97] hover:border-[0.2px] focus:border-[0.2px] focus:border-b-4 active:bg-background hover:bg-background hover:border-b-4 hover:border-primary/30 shadow-none transition-all duration-100"
+      )}
+      style={
+        isCopied
+          ? { width: "78px", height: "28px" }
+          : { width: "28px", height: "28px" }
+      }
+      transition={{ type: "spring", bounce: 0, duration: 1 }}
+      onClick={() => handleCopy(portfolio.mail)}
+    >
+      <AnimatePresence initial={false} mode="wait">
+        {isCopied ? (
+          <motion.span
+            key="check-icon"
+            initial={{ scale: 0.3, opacity: 0 }}
+            animate={{ scale: 1, opacity: 1 }}
+            exit={{ scale: 0.3, opacity: 0 }}
+            transition={{ type: "spring", bounce: 0, duration: 0.3 }}
+          >
+            copied!
+          </motion.span>
+        ) : (
+          <motion.span
+            key="mail-icon"
+            initial={{ scale: 0.3, opacity: 0 }}
+            animate={{ scale: 1, opacity: 1 }}
+            exit={{ scale: 0.3, opacity: 0 }}
+            transition={{ type: "spring", bounce: 0, duration: 0.3 }}
+          >
+            <Mail />
+          </motion.span>
+        )}
+      </AnimatePresence>
+    </motion.button>
   );
 }
 
@@ -77,5 +147,4 @@ const IconMap = {
       ></path>
     </svg>
   ),
-  mail: <Mail />,
 };
