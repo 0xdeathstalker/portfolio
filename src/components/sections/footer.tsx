@@ -50,12 +50,15 @@ export default function Footer() {
   }, []);
 
   return (
-    <footer ref={footerRef} className="h-80 w-full relative overflow-hidden">
+    <footer
+      ref={footerRef}
+      className="h-24 md:h-48 lg:h-56 xl:h-72 w-full relative overflow-hidden"
+    >
       <motion.h1
         ref={textRef}
         style={{ fontWeight }}
         transition={{ duration: 0.1 }}
-        className="absolute bottom-0 left-0 right-0 text-[210px] translate-y-[15%] tracking-tighter uppercase text-center text-8xl mx-auto text-neutral-800"
+        className="absolute bottom-0 left-0 right-0 text-6xl md:text-[140px] lg:text-[180px] xl:text-[210px] translate-y-[15%] tracking-tighter uppercase text-center mx-auto text-neutral-800"
       >
         dthstlkr
       </motion.h1>

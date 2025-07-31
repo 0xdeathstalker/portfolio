@@ -32,7 +32,7 @@ export function ProjectCard({ project }: { project: Project }) {
         <div className="absolute bottom-1 w-0 h-[1px] peer-hover:w-full bg-black transition-all ease-[cubic-bezier(0.785,0.135,0.15,0.86)] duration-300" />
       </div>
 
-      <h2 className="text-neutral-600 text-xs">
+      <h2 className="text-neutral-700 text-xs">
         {project.role} {project.period && `(${project.period})`}
       </h2>
       <p className="text-sm">{project.description}</p>
