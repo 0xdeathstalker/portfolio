@@ -1,6 +1,6 @@
 "use client";
 
-import { Check, Mail } from "lucide-react";
+import { Mail } from "lucide-react";
 import { AnimatePresence, motion } from "motion/react";
 import Link from "next/link";
 import * as React from "react";
@@ -22,7 +22,7 @@ export default function Socials() {
             target="_blank"
             className={cn(
               buttonVariants({ variant: "outline", size: "icon" }),
-              "size-7 active:border-b active:scale-[0.97] hover:border-[0.2px] focus:border-[0.2px] focus:border-b-4 active:bg-background hover:bg-background hover:border-b-4 hover:border-primary/30 shadow-none transition-all duration-100"
+              "size-7"
             )}
           >
             {IconMap[key]}
@@ -61,14 +61,13 @@ function MailButton() {
       layout
       className={cn(
         buttonVariants({ variant: "outline", size: "icon" }),
-        "cursor-pointer active:border-b active:scale-[0.97] hover:border-[0.2px] focus:border-[0.2px] focus:border-b-4 active:bg-background hover:bg-background hover:border-b-4 hover:border-primary/30 shadow-none transition-all duration-100"
+        "size-7"
       )}
       style={
         isCopied
           ? { width: "78px", height: "28px" }
           : { width: "28px", height: "28px" }
       }
-      transition={{ type: "spring", bounce: 0, duration: 1 }}
       onClick={() => handleCopy(portfolio.mail)}
     >
       <AnimatePresence initial={false} mode="wait">
