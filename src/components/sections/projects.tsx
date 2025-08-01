@@ -9,7 +9,10 @@ export default function Projects() {
       <h1 className="text-3xl font-medium mb-8">builds</h1>
       <div className="space-y-12">
         {projects.map((project) => (
-          <ProjectCard key={project.title} project={project} />
+          <ProjectCard
+            key={project.title}
+            project={project}
+          />
         ))}
       </div>
     </div>

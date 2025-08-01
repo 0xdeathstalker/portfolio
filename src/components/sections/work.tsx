@@ -40,8 +40,11 @@ function WorkCard({ work }: { work: WorkType }) {
       </h2>
       <div className="text-sm">
         {work.description.map((d, i) => (
-          // biome-ignore lint/suspicious/noArrayIndexKey: no other variable to use as key
-          <p key={i} className="inline mx-0.5">
+          <p
+            // biome-ignore lint/suspicious/noArrayIndexKey: no other variable to use as key
+            key={i}
+            className="inline mx-0.5"
+          >
             {d}
           </p>
         ))}
