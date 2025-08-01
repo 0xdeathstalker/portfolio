@@ -33,7 +33,7 @@ export default function DynamicFavicon() {
 
     document.head.appendChild(newLink);
 
-    // forcing browser to render updated favicon
+    // forcing browser to render updated favicon; removing timestamp part
     setTimeout(() => {
       newLink.href = faviconPath;
     }, 100);
