@@ -1,4 +1,5 @@
-import type { portfolio } from "@/lib/config/site";
+import type { ReactElement } from "react";
+import type { portfolio } from "@/lib/config/site-data";
 
 export type Project = {
   title: string;
@@ -14,7 +15,7 @@ export type Work = {
   company: string;
   role: string;
   period: string;
-  description: string;
+  description: Array<ReactElement | string>;
   href: string;
 };
 

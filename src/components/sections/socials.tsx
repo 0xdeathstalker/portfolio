@@ -4,8 +4,8 @@ import { Mail } from "lucide-react";
 import { AnimatePresence, motion } from "motion/react";
 import Link from "next/link";
 import * as React from "react";
-import { Button, buttonVariants } from "@/components/ui/button";
-import { portfolio } from "@/lib/config/site";
+import { buttonVariants } from "@/components/ui/button";
+import { portfolio } from "@/lib/config/site-data";
 import { useCopyToClipboard } from "@/lib/hooks/useCopyToClipboard";
 import type { SocialKeys } from "@/lib/types";
 import { cn } from "@/lib/utils";
@@ -20,7 +20,10 @@ export default function Socials() {
             key={key}
             href={link}
             target="_blank"
-            className={cn(buttonVariants({ variant: "outline", size: "icon" }), "size-7")}
+            className={cn(
+              buttonVariants({ variant: "outline", size: "icon" }),
+              "size-7"
+            )}
           >
             {IconMap[key]}
           </Link>
@@ -56,14 +59,18 @@ function MailButton() {
     <motion.button
       ref={buttonRef}
       layout
-      className={cn(buttonVariants({ variant: "outline", size: "icon" }), "size-7")}
-      style={isCopied ? { width: "78px", height: "28px" } : { width: "28px", height: "28px" }}
+      className={cn(
+        buttonVariants({ variant: "outline", size: "icon" }),
+        "size-7"
+      )}
+      style={
+        isCopied
+          ? { width: "78px", height: "28px" }
+          : { width: "28px", height: "28px" }
+      }
       onClick={() => handleCopy(portfolio.mail)}
     >
-      <AnimatePresence
-        initial={false}
-        mode="wait"
-      >
+      <AnimatePresence initial={false} mode="wait">
         {isCopied ? (
           <motion.span
             key="check-icon"

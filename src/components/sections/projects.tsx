@@ -1,18 +1,15 @@
 import Link from "next/link";
-import { projects } from "@/lib/config/projects";
+import LinkIcon from "@/components/link-icon";
+import { projects } from "@/lib/config/site-data";
 import type { Project } from "@/lib/types";
-import LinkIcon from "../link-icon";
 
 export default function Projects() {
   return (
     <div className="py-10">
-      <h1 className="text-3xl font-medium mb-8">projects</h1>
+      <h1 className="text-3xl font-medium mb-8">builds</h1>
       <div className="space-y-12">
         {projects.map((project) => (
-          <ProjectCard
-            key={project.title}
-            project={project}
-          />
+          <ProjectCard key={project.title} project={project} />
         ))}
       </div>
     </div>
