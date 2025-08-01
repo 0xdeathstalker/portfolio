@@ -1,33 +1,20 @@
-import Link from 'next/link';
+import Footer from "@/components/sections/footer";
+import Hero from "@/components/sections/hero";
+import Projects from "@/components/sections/projects";
+import Work from "@/components/sections/work";
 
 export default function Home() {
   return (
-    <div>
-      <main>
-        <h1 className='mt-12 mb-6 text-xl font-semibold tracking-tighter'>
-          soumya mukherjee
-        </h1>
+    <main className="relative pt-20 min-h-screen w-full font-sans px-4">
+      <div className="mx-auto max-w-[70ch]">
+        <Hero />
 
-        <div>
-          {/* <p className='mb-6'>
-            building solid and scalable products with delightful user experience
-            boosts me up to learn more new technologies.
-          </p> */}
-          <ul>
-            <li>
-              &#x2022; frontend dev{' '}
-              <Link
-                href='https://routerprotocol.com'
-                className='hover:underline underline-offset-2 text-blue-500'
-              >
-                @routerprotocol
-              </Link>
-            </li>
-            <li>&#x2022; exploring fullstack dev & web3.</li>
-            <li>&#x2022; trying to figure out things.</li>
-          </ul>
-        </div>
-      </main>
-    </div>
+        <Work />
+
+        <Projects />
+      </div>
+
+      <Footer />
+    </main>
   );
 }

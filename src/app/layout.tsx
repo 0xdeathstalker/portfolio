@@ -1,21 +1,25 @@
-import type { Metadata } from 'next';
-import localFont from 'next/font/local';
-import './globals.css';
+import type { Metadata } from "next";
+import { Geist, Geist_Mono } from "next/font/google";
+import "@/styles/globals.css";
+import Provider from "@/components/provider";
+import DynamicFavicon from "@/components/ui/favicon";
 
-const geistSans = localFont({
-  src: './fonts/GeistVF.woff',
-  variable: '--font-geist-sans',
-  weight: '100 900',
+const geistSans = Geist({
+  variable: "--font-geist-sans",
+  subsets: ["latin"],
 });
-const geistMono = localFont({
-  src: './fonts/GeistMonoVF.woff',
-  variable: '--font-geist-mono',
-  weight: '100 900',
+
+const geistMono = Geist_Mono({
+  variable: "--font-geist-mono",
+  subsets: ["latin"],
 });
 
 export const metadata: Metadata = {
-  title: 'Soumya',
-  description: 'My portfolio website',
+  title: "Deathstalker",
+  description: "What I’ve been crafting instead of sleeping.",
+  icons: {
+    icon: "/images/favicon-dark.ico", // default favicon
+  },
 };
 
 export default function RootLayout({
@@ -24,12 +28,15 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang='en'>
-      <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased mx-auto max-w-[44rem] pt-8 sm:pt-[3rem] pb-36 xs:px-0 px-6`}
-      >
-        {/* <Navbar /> */}
-        {children}
+    <html
+      lang="en"
+      suppressHydrationWarning
+    >
+      <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
+        <Provider>
+          <DynamicFavicon />
+          {children}
+        </Provider>
       </body>
     </html>
   );
