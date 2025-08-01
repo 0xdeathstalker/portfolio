@@ -1,4 +1,4 @@
-import { portfolio } from "@/lib/config/site";
+import { portfolio } from "@/lib/config/site-data";
 import Socials from "./socials";
 
 export default function Hero() {
