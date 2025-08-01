@@ -23,7 +23,10 @@ export default function DynamicFavicon() {
     newLink.rel = "icon";
     newLink.type = "image/x-icon";
 
-    const faviconPath = currentTheme === "dark" ? "/images/favicon-dark.ico" : "/images/favicon-light.ico";
+    const faviconPath =
+      currentTheme === "dark"
+        ? "/images/d-favicon-dark.ico"
+        : "/images/d-favicon-light.ico";
 
     // adding timestamp to prevent caching
     newLink.href = `${faviconPath}?t=${Date.now()}`;
