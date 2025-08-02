@@ -23,7 +23,7 @@ export const works: Array<Work> = [
       <Link
         href="https://explorer.routernitro.com"
         target="_blank"
-        className="text-foreground hover:underline underline-offset-2"
+        className="text-foreground"
       >
         nitro explorer
       </Link>,
@@ -31,7 +31,7 @@ export const works: Array<Work> = [
       <Link
         href="https://github.com/router-protocol/tangled"
         target="_blank"
-        className="text-foreground hover:underline underline-offset-2"
+        className="text-foreground"
       >
         wallet sdks
       </Link>,
@@ -39,7 +39,7 @@ export const works: Array<Work> = [
       <Link
         href="https://routernitro.com/swap"
         target="_blank"
-        className="text-foreground hover:underline underline-offset-2"
+        className="text-foreground"
       >
         nitro dapp
       </Link>,
