@@ -61,7 +61,7 @@ export const works: Array<Work> = [
 
 export const projects: Array<Project> = [
   {
-    title: "nitro-explorer",
+    title: "nitro-explorer-v2",
     description:
       "a blazing-fast revamped version of cross-chain blockchain explorer rebuilt with a focus on performance and ux.",
     role: "creator and maintainer",
