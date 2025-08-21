@@ -4,7 +4,8 @@ import type { Project, Work } from "@/lib/types";
 export const portfolio = {
   author: "soumya mukherjee",
   bio: "i build fast and sharp interfaces. obsessed with clean ui and smooth ux. developing the skill to craft polished web experiences. diving deep in web3. if it's sleek, snappy, and slightly overengineered - chances are i made it.",
-  resume: "https://drive.google.com/file/d/19NML86_Fj4YxKxNGYzT2qynNRJfFKJvv/view?usp=sharing",
+  resume:
+    "https://drive.google.com/file/d/19NML86_Fj4YxKxNGYzT2qynNRJfFKJvv/view?usp=sharing",
   socials: {
     github: "https://github.com/0xdeathstalker",
     linkedin: "https://www.linkedin.com/in/soumya-mukherjee-88a551248/",
@@ -62,7 +63,7 @@ export const projects: Array<Project> = [
   {
     title: "nitro-explorer-v2",
     description:
-      "a blazing-fast revamped version of cross-chain blockchain explorer rebuilt with a focus on performance and ux.",
+      "a blazing-fast revamped version of cross-chain blockchain explorer (nitro explorer) rebuilt with a focus on performance and ux.",
     role: "creator and maintainer",
     period: "mar 2025 - jul 2025",
     achievements: [
@@ -70,7 +71,14 @@ export const projects: Array<Project> = [
       "eliminated layout shift and loading jank with full non-blocking data flow",
       "designed keyboard-driven cmdk navigation for rapid search experience",
     ],
-    technologies: ["next.js", "tailwindcss", "shadcnui", "zod", "zustand", "typescript"],
+    technologies: [
+      "next.js",
+      "tailwindcss",
+      "shadcnui",
+      "zod",
+      "zustand",
+      "typescript",
+    ],
     href: "https://nitro-explorer.vercel.app",
   },
   {
@@ -98,7 +106,15 @@ export const projects: Array<Project> = [
       "added system messages for join/leave activity and contextual flow",
       "implemented graceful UX for handling expired or invalid rooms",
     ],
-    technologies: ["next.js", "tailwind css", "convex", "react query", "zod", "uploadthing", "posthog"],
+    technologies: [
+      "next.js",
+      "tailwind css",
+      "convex",
+      "react query",
+      "zod",
+      "uploadthing",
+      "posthog",
+    ],
     href: "https://whispr-room.vercel.app",
   },
 ] as const;
