@@ -19,7 +19,7 @@ export default function Work() {
       </h1>
       <div className="space-y-12">
         {works.map((work, index) => (
-          <WorkCard
+          <WorkItem
             // biome-ignore lint/suspicious/noArrayIndexKey: no other variable to use as key
             key={index}
             work={work}
@@ -30,21 +30,22 @@ export default function Work() {
   );
 }
 
-function WorkCard({ work }: { work: WorkType }) {
+function WorkItem({ work }: { work: WorkType }) {
   return (
     <div className="space-y-3 text-muted-foreground">
-      <div className="w-fit relative">
+      <div className="w-fit relative inline-flex items-center gap-1 link">
         <Link
           href={work.href}
           target="_blank"
-          className="inline-flex items-center gap-1 text-foreground peer text-lg link"
+          className="group text-foreground text-lg relative hover:text-background"
         >
           {work.company}
-          <LinkIcon />
+          <div className="-z-10 absolute bottom-1 w-0 h-[calc(theme(fontSize.lg)*theme(lineHeight.tight))] group-hover:w-full dark:bg-neutral-100 bg-neutral-900 transition-all ease-[cubic-bezier(0.785,0.135,0.15,0.86)]" />
         </Link>
 
-        <div className="absolute bottom-1 w-0 h-[1px] peer-hover:w-full dark:bg-neutral-100 bg-neutral-900 transition-all ease-[cubic-bezier(0.785,0.135,0.15,0.86)] duration-300" />
+        <LinkIcon />
       </div>
+
       <h2 className="dark:text-neutral-300 text-neutral-700 text-sm sm:text-base">
         {work.role} {work.period && `(${work.period})`}
       </h2>
