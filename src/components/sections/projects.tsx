@@ -1,20 +1,21 @@
-import Link from "next/link";
 import LinkIcon from "@/components/link-icon";
 import { projects } from "@/lib/config/site-data";
 import type { Project } from "@/lib/types";
+import Link from "next/link";
 
 export default function Projects() {
   return (
-    <section id="builds" className="py-10">
-      <h1 className="text-3xl font-medium mb-8 group w-fit">
-        builds{" "}
-        <span className="opacity-0 group-hover:opacity-100 transition-all duration-300 ease-out text-neutral-400 dark:text-neutral-600 text-base transform translate-x-10 group-hover:translate-x-0">
-          [b]
-        </span>
-      </h1>
+    <section
+      id="builds"
+      className="py-10"
+    >
+      <h1 className="text-3xl font-medium mb-8 group w-fit">builds </h1>
       <div className="space-y-12">
         {projects.map((project) => (
-          <ProjectItem key={project.title} project={project} />
+          <ProjectItem
+            key={project.title}
+            project={project}
+          />
         ))}
       </div>
     </section>

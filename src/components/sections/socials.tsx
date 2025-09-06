@@ -1,18 +1,20 @@
 "use client";
 
-import { Mail } from "lucide-react";
-import { AnimatePresence, motion } from "motion/react";
-import Link from "next/link";
-import * as React from "react";
 import { buttonVariants } from "@/components/ui/button";
 import { portfolio } from "@/lib/config/site-data";
 import { useCopyToClipboard } from "@/lib/hooks/useCopyToClipboard";
 import type { SocialKeys } from "@/lib/types";
 import { cn } from "@/lib/utils";
+import { Mail } from "lucide-react";
+import { AnimatePresence, motion } from "motion/react";
+import Link from "next/link";
+import * as React from "react";
 
 export default function Socials() {
   return (
     <div className="inline-flex items-center gap-2">
+      <ResumeButton />
+
       {(Object.keys(portfolio.socials) as Array<SocialKeys>).map((key) => {
         const link = portfolio.socials[key];
         return (
@@ -29,6 +31,18 @@ export default function Socials() {
 
       <MailButton />
     </div>
+  );
+}
+
+function ResumeButton() {
+  return (
+    <Link
+      href={portfolio.resume}
+      target="_blank"
+      className={cn(buttonVariants({ variant: "outline", size: "sm" }), "h-7")}
+    >
+      resume
+    </Link>
   );
 }
 
