@@ -20,3 +20,19 @@ export type Work = {
 };
 
 export type SocialKeys = keyof typeof portfolio.socials;
+
+// blogs
+export type Metadata = {
+  title: string;
+  description: string;
+  date: string;
+};
+
+export type FrontmatterParseResult = {
+  metadata: Metadata;
+  content: string;
+};
+
+export type MDXFileData = FrontmatterParseResult & {
+  slug: string;
+};

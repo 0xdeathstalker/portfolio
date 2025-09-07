@@ -177,3 +177,46 @@
   color: var(--background);
   background: var(--foreground);
 }
+
+/* mdx content styles */
+.shiki,
+.shiki span {
+  color: var(--shiki-dark) !important;
+  background-color: var(--shiki-dark-bg) !important;
+  font-family: var(--font-geist-mono), monospace !important;
+}
+
+.prose a:not(.anchor) {
+  @apply text-accent-foreground no-underline hover:underline;
+}
+
+.prose a.anchor {
+  @apply relative no-underline;
+}
+
+.prose a.anchor:hover::before {
+  @apply opacity-100;
+}
+
+.prose pre {
+  @apply overflow-x-auto border border-border bg-background my-4 rounded;
+}
+
+.prose code:not(pre code) {
+  @apply px-1 py-0.5 text-sm border border-gray-700 rounded text-gray-200;
+}
+
+.prose code:not(pre code)::before,
+.prose code:not(pre code)::after {
+  content: none;
+}
+
+.prose pre code {
+  @apply p-4 block bg-transparent;
+  border: initial;
+  line-height: 1.6;
+}
+
+.prose code span {
+  @apply font-medium text-gray-200;
+}
