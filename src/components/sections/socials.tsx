@@ -39,7 +39,7 @@ function ResumeButton() {
     <Link
       href={portfolio.resume}
       target="_blank"
-      className={cn(buttonVariants({ variant: "outline", size: "sm" }), "h-7")}
+      className={cn(buttonVariants({ variant: "outline", size: "sm" }), "h-7 font-normal")}
     >
       resume
     </Link>

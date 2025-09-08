@@ -40,7 +40,7 @@ function BlogItem({ slug, title, date }: { slug: string; title: string; date: st
         href={`/blog/${slug}`}
         className="relative group hover:text-background text-foreground text-lg"
       >
-        {title}
+        {title.toLowerCase()}
         <div className="-z-10 absolute bottom-1 w-0 h-[calc(theme(fontSize.lg)*theme(lineHeight.tight))] group-hover:w-full dark:bg-neutral-100 bg-neutral-900 transition-all ease-[cubic-bezier(0.785,0.135,0.15,0.86)]" />
       </Link>
       <span className="text-muted-foreground">{formattedDate}</span>

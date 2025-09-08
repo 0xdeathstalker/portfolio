@@ -187,7 +187,7 @@
 }
 
 .prose a:not(.anchor) {
-  @apply text-accent-foreground no-underline hover:underline;
+  @apply text-accent-foreground underline hover:underline;
 }
 
 .prose a.anchor {
@@ -240,6 +240,20 @@
   @apply mb-2;
 }
 
+/* List markers are visible and styled */
+.prose ul {
+  list-style-type: disc;
+}
+
+.prose ol {
+  list-style-type: decimal;
+}
+
+.prose li::marker {
+  color: var(--color-muted-foreground);
+  font-weight: 600;
+}
+
 .prose blockquote {
   @apply border-l-4 border-border pl-4 italic my-4;
 }
@@ -265,7 +279,7 @@
 }
 
 .prose code:not(pre code) {
-  @apply px-1 py-0.5 text-sm border bg-neutral-300 dark:bg-neutral-900 dark:border-neutral-700 rounded dark:text-neutral-300 font-mono;
+  @apply px-1 py-0.5 text-sm border bg-neutral-300 dark:bg-neutral-900 border-neutral-500 dark:border-neutral-700 rounded dark:text-neutral-300 font-mono font-medium;
 }
 
 .prose code:not(pre code)::before,

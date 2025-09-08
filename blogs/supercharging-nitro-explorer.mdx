@@ -1,0 +1,59 @@
+---
+title: "Supercharging Nitro Explorer: A Performance Overhaul"
+description: "How I improved the performance of Nitro Explorer and the lessons I have learned from rebuilding and optimizing it."
+date: "September 8, 2025"
+---
+
+When I first built the Nitro Explorer, a cross-chain blockchain explorer, it worked fine — but it wasn’t blazing fast. The original version had a Lighthouse performance score of \~43 (max 65), which made it feel sluggish and not as smooth as I wanted. Over time, I decided to rebuild and optimize the explorer from the ground up, focusing on speed, smoothness, and user experience. The result? The redesigned version now consistently scores 93–98 in Lighthouse, with almost zero layout shift and a seamless feel.
+
+In this post, I’ll share the performance challenges I observed, the approaches I used to improve them, and what I learned from the process.
+
+## Key Problems in the Old Explorer
+
+- Low Lighthouse performance score of \~43 (max 65), which made the site feel sluggish.
+- Visible layout shifts caused by how data was loaded.
+- Blocking or undefined states when data wasn’t ready, leading to interruptions in the experience.
+- No global search functionality, making navigation between chains, addresses, or transactions slow and clunky.
+
+## Tools and Techniques Implemented
+
+### Next.js 15 App Router
+
+When I rebuilt Nitro Explorer, I leaned heavily on the new Next.js App Router. By splitting the app into server components for static data and client components for interactivity, I was able to reduce unnecessary JavaScript on the client and make the initial paint faster. This gave the explorer a strong foundation for better performance.
+
+### React Query
+
+For handling data fetching, I used React Query. It allowed me to cache results and keep previous data while fetching new pages, which meant pagination no longer felt jarring. Background refetching also kept data fresh without blocking the interface. This was a major improvement over the old version, where loading states often interrupted the flow.
+
+In addition, I implemented React Query’s prefetching and SSR integration as outlined in their [guide](https://tanstack.com/query/latest/docs/framework/react/guides/ssr). By prefetching queries on the server and hydrating them on the client, I reduced the time to first usable data and made the querying process more efficient. This hybrid approach ensured that pages loaded with meaningful data immediately, while React Query continued to manage updates and cache on the client.
+
+### CMDK (Command Menu)
+
+Another improvement I made was integrating CMDK, a command palette search. Instead of navigating through pages manually, users can now instantly jump to transactions, addresses, or chains. This not only made the explorer feel faster but also gave it a more modern and efficient workflow.
+
+### UI and UX Improvements
+
+On the UI side, I focused on eliminating layout shifts. I replaced spinners with skeleton loaders, which kept the layout stable while data was loading. I also reduced heavy animations and limited Framer Motion usage to subtle hover effects. This kept the interface smooth without adding extra weight.
+
+### Bundle Optimization
+
+Finally, I optimized the bundle size. The project used a heavy, non-tree-shakeable SDK, so I dynamically imported it only in the places where it was required. I also avoided unnecessary client components for static sections. Together, these changes reduced the JavaScript payload and improved both time to first byte (TTFB) and first contentful paint (FCP).
+
+## Before vs After
+
+- Old Explorer: 43 (max 65) performance score, visible layout shifts, blocking states, and slower navigation.
+- New Explorer: 93 (max 98) performance score, near-instant navigation, minimal layout shifts, and a much smoother experience overall.
+
+## Lessons Learned
+
+Through this process, I learned that not everything needs to be server-side rendered. For example, I only used SSR for detail pages like `/tx/[hash]`, and let React Query handle frequently updating lists. I also realized how much small improvements add up: skeleton loaders, URL-synced filters, and dynamic imports collectively made the explorer feel much faster. Tools like Lighthouse and Web Vitals were invaluable in showing me where the bottlenecks really were. Finally, I came to appreciate that performance is part of UX — features like CMDK search didn’t directly raise Lighthouse scores, but they made the explorer feel twice as fast to use.
+
+## What’s Next?
+
+The redesigned explorer may not have been officially adopted, but for me it was a launchpad. I came out of the project with sharper skills in structuring applications with Next.js App Router, a deeper understanding of React Query’s caching and SSR capabilities, and a mindset focused on Core Web Vitals as a measure of real user experience.
+
+The exciting part is where these skills lead next. With the foundation I’ve built, I want to explore how can I refine bundle strategies and experiment with edge rendering to squeeze even more performance out of web apps.
+
+This project reminded me that building frontend applications isn’t just about making things work. It’s about making them feel effortless. That lesson is something I’ll carry into every project that comes next.
+
+You can try the improved explorer here: [nitro-explorer.vercel.app](https://nitro-explorer.vercel.app)
