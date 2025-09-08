@@ -3,6 +3,7 @@ import { Geist, Geist_Mono } from "next/font/google";
 import "@/styles/globals.css";
 import Provider from "@/components/provider";
 import DynamicFavicon from "@/components/ui/favicon";
+import Footer from "@/components/sections/footer";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -36,6 +37,7 @@ export default function RootLayout({
         <Provider>
           <DynamicFavicon />
           {children}
+          <Footer />
         </Provider>
       </body>
     </html>

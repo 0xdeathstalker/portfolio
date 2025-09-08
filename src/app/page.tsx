@@ -6,18 +6,14 @@ import Work from "@/components/sections/work";
 
 export default function Home() {
   return (
-    <main className="relative pt-20 min-h-screen w-full font-sans px-4">
-      <div className="mx-auto max-w-[70ch]">
-        <Hero />
+    <main className="relative pt-20 min-h-screen w-full font-sans px-4 mx-auto max-w-[70ch]">
+      <Hero />
 
-        <Work />
+      <Work />
 
-        <Blogs />
+      <Blogs />
 
-        <Projects />
-      </div>
-
-      <Footer />
+      <Projects />
     </main>
   );
 }

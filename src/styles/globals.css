@@ -199,11 +199,73 @@
 }
 
 .prose pre {
-  @apply overflow-x-auto border border-border bg-background my-4 rounded;
+  @apply overflow-x-auto border border-border bg-background my-4 rounded text-muted-foreground;
+}
+
+.prose h1,
+.prose h2,
+.prose h3,
+.prose h4,
+.prose h5,
+.prose h6 {
+  @apply mt-8 mb-4 font-medium;
+}
+
+.prose h1 {
+  @apply text-3xl;
+}
+
+.prose h2 {
+  @apply text-2xl;
+}
+
+.prose h3 {
+  @apply text-xl;
+}
+
+.prose h4 {
+  @apply text-lg;
+}
+
+.prose p {
+  @apply mb-4 leading-relaxed dark:text-gray-300 text-neutral-800;
+}
+
+.prose ul,
+.prose ol {
+  @apply mb-4 pl-6 dark:text-gray-300 text-neutral-800;
+}
+
+.prose li {
+  @apply mb-2;
+}
+
+.prose blockquote {
+  @apply border-l-4 border-border pl-4 italic my-4;
+}
+
+.prose table {
+  @apply w-full border-collapse my-6;
+}
+
+.prose thead {
+  @apply bg-muted;
+}
+
+.prose th {
+  @apply p-3 text-left font-semibold border-b border-border;
+}
+
+.prose td {
+  @apply p-3 text-left border-b border-border;
+}
+
+.prose tbody tr:hover {
+  @apply bg-muted/50;
 }
 
 .prose code:not(pre code) {
-  @apply px-1 py-0.5 text-sm border border-gray-700 rounded text-gray-200;
+  @apply px-1 py-0.5 text-sm border bg-neutral-300 dark:bg-neutral-900 dark:border-neutral-700 rounded dark:text-neutral-300 font-mono;
 }
 
 .prose code:not(pre code)::before,
@@ -218,5 +280,5 @@
 }
 
 .prose code span {
-  @apply font-medium text-gray-200;
+  @apply font-medium text-gray-600;
 }

@@ -11,7 +11,7 @@ export default function Blogs() {
       className="py-10"
     >
       <h1 className="text-3xl font-medium mb-8 group w-fit">blogs</h1>
-      <div className="space-y-12">
+      <div className="space-y-4">
         {blogs.map((blog) => (
           <BlogItem
             key={blog.slug}
@@ -38,7 +38,7 @@ function BlogItem({ slug, title, date }: { slug: string; title: string; date: st
     <div className="flex items-center justify-between">
       <Link
         href={`/blog/${slug}`}
-        className="relative group hover:text-background text-lg"
+        className="relative group hover:text-background text-foreground text-lg"
       >
         {title}
         <div className="-z-10 absolute bottom-1 w-0 h-[calc(theme(fontSize.lg)*theme(lineHeight.tight))] group-hover:w-full dark:bg-neutral-100 bg-neutral-900 transition-all ease-[cubic-bezier(0.785,0.135,0.15,0.86)]" />

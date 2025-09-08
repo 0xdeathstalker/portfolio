@@ -5,29 +5,17 @@ import * as React from "react";
 import { codeToHtml } from "shiki";
 
 function Table({ data }: { data: { headers: Array<string>; rows: Array<Array<string>> } }) {
-  let headers = data.headers.map((header, index) => (
-    <th
-      key={index}
-      className="p-2 text-left"
-    >
-      {header}
-    </th>
-  ));
+  let headers = data.headers.map((header, index) => <th key={index}>{header}</th>);
   let rows = data.rows.map((row, index) => (
     <tr key={index}>
       {row.map((cell, cellIndex) => (
-        <td
-          key={cellIndex}
-          className="p-2 text-left"
-        >
-          {cell}
-        </td>
+        <td key={cellIndex}>{cell}</td>
       ))}
     </tr>
   ));
 
   return (
-    <table className="w-full border-collapse">
+    <table>
       <thead>
         <tr>{headers}</tr>
       </thead>
@@ -66,7 +54,7 @@ function CustomImage(props: React.ImgHTMLAttributes<HTMLImageElement>) {
   return (
     <img
       alt={props.alt}
-      className="rounded-lg"
+      className="rounded"
       {...props}
     />
   );

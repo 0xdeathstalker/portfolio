@@ -79,7 +79,7 @@ export default function Footer() {
         ref={textRef}
         style={{ fontWeight }}
         transition={{ duration: 0.1 }}
-        className="dark:text-neutral-600 cursor-pointer absolute bottom-0 left-0 right-0 text-6xl md:text-[140px] lg:text-[180px] xl:text-[210px] translate-y-[15%] tracking-tighter uppercase text-center mx-auto text-neutral-400"
+        className="font-sans dark:text-neutral-600 cursor-pointer absolute bottom-0 left-0 right-0 text-6xl md:text-[140px] lg:text-[180px] xl:text-[210px] translate-y-[15%] tracking-tighter uppercase text-center mx-auto text-neutral-400"
       >
         dthstlkr
       </motion.h1>
