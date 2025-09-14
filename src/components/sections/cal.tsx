@@ -2,9 +2,9 @@
 
 import * as React from "react";
 import { getCalApi } from "@calcom/embed-react";
-import { Button } from "../ui/button";
+import { Button } from "@/components/ui/button";
 import { Calendar } from "lucide-react";
-import { Tooltip, TooltipContent, TooltipTrigger } from "../ui/tooltip";
+import { Tooltip, TooltipContent, TooltipTrigger } from "@/components/ui/tooltip";
 
 export const ScheduleCallButton = () => {
   React.useEffect(() => {
