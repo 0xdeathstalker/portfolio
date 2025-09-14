@@ -1,14 +1,15 @@
 "use client";
 
-import { buttonVariants } from "@/components/ui/button";
+import { Button, buttonVariants } from "@/components/ui/button";
 import { portfolio } from "@/lib/config/site-data";
 import { useCopyToClipboard } from "@/lib/hooks/useCopyToClipboard";
 import type { SocialKeys } from "@/lib/types";
 import { cn } from "@/lib/utils";
-import { Mail } from "lucide-react";
+import { Calendar, Mail } from "lucide-react";
 import { AnimatePresence, motion } from "motion/react";
 import Link from "next/link";
 import * as React from "react";
+import { ScheduleCallButton } from "./cal";
 
 export default function Socials() {
   return (
@@ -22,7 +23,10 @@ export default function Socials() {
             key={key}
             href={link}
             target="_blank"
-            className={cn(buttonVariants({ variant: "outline", size: "icon" }), "size-7")}
+            className={cn(
+              buttonVariants({ variant: "outline", size: "icon" }),
+              "size-7"
+            )}
           >
             {IconMap[key]}
           </Link>
@@ -30,6 +34,7 @@ export default function Socials() {
       })}
 
       <MailButton />
+      <ScheduleCallButton />
     </div>
   );
 }
@@ -39,7 +44,10 @@ function ResumeButton() {
     <Link
       href={portfolio.resume}
       target="_blank"
-      className={cn(buttonVariants({ variant: "outline", size: "sm" }), "h-7 font-normal")}
+      className={cn(
+        buttonVariants({ variant: "outline", size: "sm" }),
+        "h-7 font-normal"
+      )}
     >
       resume
     </Link>
@@ -74,14 +82,18 @@ function MailButton() {
     <motion.button
       ref={buttonRef}
       layout
-      className={cn(buttonVariants({ variant: "outline", size: "icon" }), "size-7")}
-      style={isCopied ? { width: "78px", height: "28px" } : { width: "28px", height: "28px" }}
+      className={cn(
+        buttonVariants({ variant: "outline", size: "icon" }),
+        "size-7"
+      )}
+      style={
+        isCopied
+          ? { width: "78px", height: "28px" }
+          : { width: "28px", height: "28px" }
+      }
       onClick={() => handleCopyAndMail(portfolio.mail)}
     >
-      <AnimatePresence
-        initial={false}
-        mode="wait"
-      >
+      <AnimatePresence initial={false} mode="wait">
         {isCopied ? (
           <motion.span
             key="check-icon"
