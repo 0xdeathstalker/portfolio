@@ -51,7 +51,7 @@ function MailButton() {
   const [isCopied, setIsCopied] = React.useState(false);
   const buttonRef = React.useRef<HTMLButtonElement>(null);
 
-  async function handleCopy(textToCopy: string) {
+  async function handleCopyAndMail(textToCopy: string) {
     if (isCopied) return;
 
     const success = await copy(textToCopy);
@@ -63,6 +63,10 @@ function MailButton() {
         setIsCopied(false);
         buttonRef.current?.blur();
       }, 2000);
+
+      setTimeout(() => {
+        window.location.href = `mailto:${portfolio.mail}`;
+      }, 2200);
     }
   }
 
@@ -72,7 +76,7 @@ function MailButton() {
       layout
       className={cn(buttonVariants({ variant: "outline", size: "icon" }), "size-7")}
       style={isCopied ? { width: "78px", height: "28px" } : { width: "28px", height: "28px" }}
-      onClick={() => handleCopy(portfolio.mail)}
+      onClick={() => handleCopyAndMail(portfolio.mail)}
     >
       <AnimatePresence
         initial={false}

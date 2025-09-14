@@ -39,7 +39,7 @@ export default function Hero() {
       id="hero"
       className="pb-10 sm:pb-5"
     >
-      <div className="flex flex-col sm:flex-row items-start justify-start gap-5 sm:justify-between mb-10">
+      <div className="flex flex-col sm:flex-row items-start sm:items-center justify-start gap-5 sm:justify-between mb-10">
         <h1 className="text-4xl font-medium">{portfolio.author}</h1>
 
         <Socials />
